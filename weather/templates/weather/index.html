@@ -1,16 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>WeatherApp</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
+    <link rel="stylesheet" href="{% static 'weather/style.css' %}">
   </head>
   <body>
     <div class="main-site">
-      <header class="logo-name"
-        <div class="logo-img"
+      <header class="logo-name">
+        <div class="logo-img">
           <h1>WeatherApp</h1>
         </div>
       </header>
@@ -18,10 +18,10 @@
         <div class="list-items">
           <div class="city-field">
             <h2>Select your city:</h2>
-            <form method="POST" class="city-form">
+            <form action="{% url 'main_site' %}" method="POST" class="city-form">
               {% csrf_token %}
-              {{ form.as_p }}
-              <input type="submit" value="search" class="search city">
+              <input type="text" name="name" maxlength="25" required="" id="id_name">
+              <input type="submit" value="search" class="search-city">
             </form>
           </div>
         </div>

@@ -6,3 +6,6 @@ class CityForm(forms.ModelForm):
     class Meta:
         model = CityField
         fields = ('name',)
+        labels = {
+            'name':''
+        }

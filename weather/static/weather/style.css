@@ -1,0 +1,39 @@
+body {
+  background-color: #C1DFF9;
+}
+
+.logo-name {
+  margin: 0 auto;
+  background-color: #C1DFF9;
+}
+
+.logo-img {
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+}
+
+.city-form {
+  text-align: center;
+
+}
+
+#id_name {
+  font-size: 16px;
+  border: 2px solid red;
+  border-radius: 4px;
+  background-color: white;
+  background-image: url('images/search.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 10px;
+}
