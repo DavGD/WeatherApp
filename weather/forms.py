@@ -1,11 +1,9 @@
-from django import forms
+from django.forms import ModelForm
 from .models import CityField
 
-class CityForm(forms.ModelForm):
+class CityForm(ModelForm):
 
     class Meta:
         model = CityField
-        fields = ('name',)
-        labels = {
-            'name':''
-        }
+        fields = ['city',]
+        

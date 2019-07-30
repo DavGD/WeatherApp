@@ -5,11 +5,9 @@ from .forms import CityForm
 
 def main_site(request):
     if request.method == 'POST':
-        form = CityForm()
+        form = CityForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('city_site')
-        else:
             return redirect('city_site')
     else:
         form = CityForm()

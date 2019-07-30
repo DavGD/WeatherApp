@@ -19,8 +19,9 @@
           <div class="city-field">
             <h2>Select your city:</h2>
             <form action="{% url 'main_site' %}" method="POST" class="city-form">
-              {% csrf_token %}
-              <input type="text" name="name" maxlength="25" required="" id="id_name">
+            {% csrf_token %}
+              <label for="id_name">City:</label>
+              <input type="text" name="city" maxlength="25" required="" id="id_name">
               <input type="submit" value="search" class="search-city">
             </form>
           </div>
