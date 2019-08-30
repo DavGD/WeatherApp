@@ -1,15 +1,24 @@
-<!DOCTYPE html>
+{% extends 'weather/base.html' %}
+
 {% load static %}
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <title>WeatherApp</title>
-    <link rel="stylesheet" href="{% static 'weather/style.css' %}">
-  </head>
-  <body>
-    <div class="123">
-      <h1>TEST</h1>
+{% block extra_head %}<link rel="stylesheet" href="{% static 'weather/detstyle.css' %}">{% endblock %}
+
+{% block content00 %}
+  <div class="bot-sun">
+    <div class="left-sun">
+      <p class="sun-txt">sunset:</p>
     </div>
-  </body>
-</html>
+    <div class="right-sun">
+      <p class="rise-txt">sunrise:</p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="weat-block">
+    <p class="city-w">{{ city_weather.city }}</p>
+    <p class="temp-w">{{ city_weather.temperature }}° C</p>
+    <p class="weat-w">{{ city_weather.weather }}</p>
+    <img src="http://openweathermap.org/img/wn/{{ city_weather.icon }}@2x.png" class="icon-w">
+  </div>
+{% endblock %}

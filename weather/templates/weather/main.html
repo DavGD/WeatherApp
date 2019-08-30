@@ -1,0 +1,14 @@
+{% extends 'weather/base.html' %}
+
+{% load static %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'weather/style.css' %}">{% endblock %}
+{% block content %}
+  <h1></h1>
+  <p class="up-form">Enter the city:</p>
+  <form action="{% url 'main_site' %}" method="POST" class="city-form">
+    {% csrf_token %}
+    <label for="id_name"></label>
+    <input type="text" name="city" maxlength="25" required="" placeholder="Search.." id="id_name">
+    <input type="submit" value="search" class="search-city">
+  </form>
+{% endblock %}

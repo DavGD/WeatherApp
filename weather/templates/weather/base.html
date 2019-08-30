@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>WeatherApp</title>
+    <link href="https://fonts.googleapis.com/css?family=Lemonada|Montserrat:600i&display=swap" rel="stylesheet">
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body>
+    <div class="main-site">
+      <header class="logo-name">
+        <nav class="crim-bar">
+          <div class="navi-bar">
+            <p class="item00"></p>
+          </div>
+        </nav>
+      </header>
+      <div class="for-main">
+        <div class="left-bar">
+          <ul class="left-list">
+            <p class="item1">Last search:</p>
+            {% for element in con_site.last_five %}
+              <li class="obj-list"><a href="{% url 'city_site' %}">{{ element }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="right-bar">
+          <ul class="right-list">
+            <li class="item3">link3</li>
+            <li class="item4">link4</li>
+          </ul>
+        </div>
+        <div class="list-items">
+          {% block content00 %}
+          {% endblock %}
+          <div class="city-field">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+      <footer class="bot-bar">
+        <div class="botter">
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
