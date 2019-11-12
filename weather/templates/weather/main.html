@@ -1,14 +1,48 @@
 {% extends 'weather/base.html' %}
-
 {% load static %}
-{% block extra_head %}<link rel="stylesheet" href="{% static 'weather/style.css' %}">{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'weather/style.css' %}" type="text/css">
+{% endblock %}
+
 {% block content %}
-  <h1></h1>
-  <p class="up-form">Enter the city:</p>
-  <form action="{% url 'main_site' %}" method="POST" class="city-form">
-    {% csrf_token %}
-    <label for="id_name"></label>
-    <input type="text" name="city" maxlength="25" required="" placeholder="Search.." id="id_name">
-    <input type="submit" value="search" class="search-city">
-  </form>
+<div class="middle-content">
+  <div class="welcome-txt">
+    <h1>Welcome!</h1>
+    <div class="info-txt-midd">
+      <p>In this App you can saw a world weather.</p>
+      <p>Just write a city in form below.</p>
+    </div>
+  </div>
+  <div class="form-top">
+    <form action="{% url 'main_site' %}" method="POST" class="city-form">
+      {% csrf_token %}
+      <label for="id_name"></label>
+      <input type="text" name="city" maxlength="25" required="" placeholder="Search location..." id="id_name">
+    </form>
+  </div>
+  <div class="scr-txt-midd">
+    <p>To details info scroll down.</p>
+    <span class="icon-down"></span>
+  </div>
+</div>
+<div class="bottom-content">
+  <div class="bott-colums">
+    <span class="icon-book-open"></span>
+    <h2>About: </h2>
+    <div class="colm001">
+      <p><b>Weather data: </b></p>
+      <p>Site uses a data from: <br> openweathermap.com</p>
+    </div>
+    <div class="colm002">
+      <p><b>Images: </b><p>
+      <p>Images is from: <br> <a href="https://pixabay.com/pl/users/BSRARSLNTRK-13141094/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4364209"> Büşra ARSLANTÜRK</a> z <a href="https://pixabay.com/pl/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4364209"> Pixabay,</a></p>
+      <p><a href="https://pixabay.com/pl/users/Broin-12188/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=351836"> Broin</a> z <a href="https://pixabay.com/pl/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=351836"> Pixabay</a>
+    </div>
+    <div class="colm003">
+      <p><b>Icons: </b></p>
+      <p></p>
+    </div>
+  </div>
+</div>
 {% endblock %}

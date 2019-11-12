@@ -1,143 +1,142 @@
-html, body {
-  margin: 0 ;
-  height: 100%;
-}
+@import "fontello.css";
 
-.main-site {
-  background: url('images/.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: black;
-  height: 100%;
-}
-
-.logo-name {
-  position: relative;
-  box-sizing: content-box;
-  display: block;
-}
-
-.crim-bar {
+* {
   box-sizing: border-box;
 }
 
-.navi-bar {
-  list-style-type: none;
+body {
+  font-family: arial;
   margin: 0;
-  padding: 0;
-  height: 40px;
-  overflow: hidden;
-  background-color: white;
+
 }
 
-.item00 {
-  font-family: 'Lemonada', cursive;
-  text-align: center;
-  font-size: 35px;
-  margin-top: 10px;
+.head-top {
+  height: 35px;
+  background-color: black;
+  box-shadow: 15px 0px 15px grey;
+  opacity: 0.7;
+  filter: alpha(opacity=50);
 }
 
-.left-bar {
+
+.time-top {
+  float: right;
+  font-size: 14px;
+  color: white;
+  padding: 7px;
+}
+
+.date-top {
+  float: right;
+  font-size: 14px;
+  color: white;
+  padding: 7px;
+}
+
+.logo {
   float: left;
 }
 
-.left-list {
-  list-style-type: none;
-  margin: 0;
-  margin-top: 250px;
-  padding: 0;
-  width: 330px;
-  height: 300px;
-  border-right: 3px solid white;
+.logo-img {
+  background-image: url("images/logo.jpg");
+  width: 45px;
+  height: 45px;
+}
+.middle-art {
+
+}
+
+
+.middle-content {
   text-align: center;
-  box-sizing: content-box;
+  width: 100%;
+  background-image: url("images/mountain.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  box-shadow: 0px 4px 8px grey;
+  height: 850px;
 }
 
-.item1 {
-  font-size: 23px;
-  color: white;
-}
-
-.obj-list {
-  color: white;
-}
-
-
-.right-bar {
-  float: right;
-}
-
-
-.right-list {
-  list-style-type: none;
-  margin: 0;
-  margin-top: 250px;
-  padding: 0;
-  width: 330px;
-  height: 300px;
-  border-left: 3px solid white;
-  text-align: center;
-  box-sizing: content-box;
-}
-
-.item3, .item4 {
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-}
-
-.list-items {
-  width: 500px;
-  height: 600px;
-  margin: 0 auto;
-  padding: 120px;
-  box-sizing: content-box;
-}
-.city-field {
-  margin-top: 170px;
-  height: 250px;
+.welcome-txt {
+  padding-top: 160px;
 }
 
 h1 {
-  font-family: 'Lemonada', cursive;
-  text-align: center;
-  font-size: 50px;
-}
-
-.up-form {
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  font-size: 50px;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
   color: white;
+  text-align: center;
+  font-family: 'Amaranth', sans-serif;
+  font-size: 44px;
 }
 
-.city-form {
-  text-align: center;
+.info-txt-midd {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 34px;
+  line-height: 45px;
+}
 
+.form-top {
+  text-align: center;
+  height: 150px;
 }
 
 #id_name {
-  font-size: 16px;
-  border: 2px solid #484848;
+  font-size: 20px;
+  border: 1px solid black;
   border-radius: 4px;
   background-color: white;
-  background-image: url('images/search.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 10px;
-  height: 30px;
-  width: 300px;
+  height: 55px;
+  width: 550px;
+  margin-top: 50px;
+  padding: 20px;
+  box-shadow: 0px 2px 8px grey;
 }
 
-.botter {
-  margin: 0;
-  padding: 0;
-  height: 40px;
-  background-color: white;
-  margin-top: 56px;
+.scr-txt-midd {
+  font-size: 14px;
+  color: white;
+  padding-top: 155px;
+}
+
+
+.bottom-content {
+  text-align: center;
+  width: 70%;
+  height: 250px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding-top: 100px;
+}
+
+.bottom-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h2 {
+  padding-bottom: 45px;
+}
+
+.colm001 {
+  float: left;
+  width: 33%;
+  height: 250px;
+  border-right: 2px solid grey;
+  font-size: 20px;
+}
+
+.colm002 {
+  float: left;
+  width: 33%;
+  height: 250px;
+  border-right: 2px solid grey;
+  font-size: 20px;
+}
+
+.colm003 {
+  float: left;
+  width: 33%;
+  height: 250px;
+  font-size: 20px;
 }

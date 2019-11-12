@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 import requests
 from .forms import CityForm
 from .models import CityField
+from datetime import datetime
 
 
 def main_site(request):
@@ -38,6 +39,8 @@ def city_site(request):
             'temperature' : int(r['main']['temp']),
             'weather' : r['weather'][0]['description'],
             'icon' : r['weather'][0]['icon'],
+            'sunrise' : datetime.utcfromtimestamp(r['sys']['sunrise']+r['timezone']).strftime('%H:%M:%S'),
+            'sunset' : datetime.utcfromtimestamp(r['sys']['sunset']+r['timezone']).strftime('%H:%M:%S'),
         }
 
         context = {'city_weather' : city_weather}

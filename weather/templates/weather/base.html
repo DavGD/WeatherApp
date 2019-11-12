@@ -1,50 +1,32 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML!>
 {% load static %}
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>WeatherApp</title>
-    <link href="https://fonts.googleapis.com/css?family=Lemonada|Montserrat:600i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Roboto:500i&display=swap" rel="stylesheet">
+    <title>WeatherTest</title>
     {% block extra_head %}{% endblock %}
   </head>
   <body>
     <div class="main-site">
-      <header class="logo-name">
-        <nav class="crim-bar">
-          <div class="navi-bar">
-            <p class="item00"></p>
+      <header class="head-top">
+        <div class="logo-top">
+          <div class="time-top">
+            <p>14:59</p>
           </div>
-        </nav>
+          <div class="date-top">
+            <p>14.09.2009</p>
+          </div>
+          <div class="logo">
+            <span class="logo-img"><span>
+          </div>
+        </div>
       </header>
-      <div class="for-main">
-        <div class="left-bar">
-          <ul class="left-list">
-            <p class="item1">Last search:</p>
-            {% for element in con_site.last_five %}
-              <li class="obj-list"><a href="{% url 'city_site' %}">{{ element }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="right-bar">
-          <ul class="right-list">
-            <li class="item3">link3</li>
-            <li class="item4">link4</li>
-          </ul>
-        </div>
-        <div class="list-items">
-          {% block content00 %}
-          {% endblock %}
-          <div class="city-field">
-            {% block content %}
-            {% endblock %}
-          </div>
-        </div>
+      <div class="middle-art">
+        {% block content %}
+        {% endblock %}
       </div>
-      <footer class="bot-bar">
-        <div class="botter">
-        </div>
-      </footer>
     </div>
   </body>
 </html>

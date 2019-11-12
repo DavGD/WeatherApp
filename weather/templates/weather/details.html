@@ -1,24 +1,306 @@
 {% extends 'weather/base.html' %}
-
 {% load static %}
-{% block extra_head %}<link rel="stylesheet" href="{% static 'weather/detstyle.css' %}">{% endblock %}
 
-{% block content00 %}
-  <div class="bot-sun">
-    <div class="left-sun">
-      <p class="sun-txt">sunset:</p>
-    </div>
-    <div class="right-sun">
-      <p class="rise-txt">sunrise:</p>
-    </div>
-  </div>
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'weather/detstyle.css' %}" type="text/css">
 {% endblock %}
 
 {% block content %}
-  <div class="weat-block">
-    <p class="city-w">{{ city_weather.city }}</p>
-    <p class="temp-w">{{ city_weather.temperature }}° C</p>
-    <p class="weat-w">{{ city_weather.weather }}</p>
-    <img src="http://openweathermap.org/img/wn/{{ city_weather.icon }}@2x.png" class="icon-w">
+<div class="middle-content">
+  <div class="form-top">
+    <form action="" method="POST">
+      <label for="id_name"></label>
+      <input type="text" name="city" maxlength="25" required="" placeholder="Search location..." id="id_name">
+    </form>
   </div>
+  <div class="hori-elements">
+    <div class="item001">
+      <div class="place-n">
+        <h3>Poznań</h3>
+      </div>
+      <div class="img-weat">
+        <img src="sun.png" height="45" width="45">
+      </div>
+      <div class="degrees">
+        <span class="dg-st">15°C</span>
+      </div>
+    </div>
+    <div class="item002">
+      <div class="place-n">
+        <h3>Gniezno</h3>
+      </div>
+      <div class="img-weat">
+        <img src="sun.png" height="45" width="45">
+      </div>
+      <div class="degrees">
+        <span class="dg-st">22°C</span>
+      </div>
+    </div>
+    <div class="item003">
+      <div class="place-n">
+        <h3>Warszawa</h3>
+      </div>
+      <div class="img-weat">
+        <img src="sun.png" height="45" width="45">
+      </div>
+      <div class="degrees">
+        <span class="dg-st">28°C</span>
+      </div>
+    </div>
+    <div class="item004">
+      <div class="place-n">
+        <h3>Amsterdam</h3>
+      </div>
+      <div class="img-weat">
+        <img src="sun.png" height="45" width="45">
+      </div>
+      <div class="degrees">
+        <span class="dg-st">5°C</span>
+      </div>
+    </div>
+    <div class="item005">
+      <div class="place-n">
+        <h3>Paryż</h3>
+      </div>
+      <div class="img-weat">
+        <img src="sun.png" height="45" width="45">
+      </div>
+      <div class="degrees">
+        <span class="dg-st">8°C</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="betwen-content">
+  <div class="actual-weat-block">
+    <div class="head-desctr-acc">
+      <h4>Today Weather:</h4>
+    </div>
+    <div class="cit-details">
+      <div class="cit-acu-name">
+        <div class="town-txt"
+          <p>{{ city_weather.city }}</p>
+        </div>
+        <div class="tim-dat-twn">
+          <p> 14:11 </p>
+          <p> 27.06.2019 </p>
+        </div>
+      </div>
+      <div class="weat-img-deg">
+        <div class="det-img">
+          <img src="http://openweathermap.org/img/wn/{{ city_weather.icon }}@2x.png" height="80" width="80">
+        </div>
+        <div class="degrees-det">
+          <span class="deg-det">{{ city_weather.temperature }}</span>
+        </div>
+        <div class="desc-deg">
+          <p> {{ city_weather.weather }} </p>
+        </div>
+      </div>
+      <div class="weat-det-tbl">
+        <div class="tbl-det-01">
+          <div class="plea-acu">
+            <p class="deta-txt">Pleasure:  123214  </p>
+          </div>
+          <div class="wind-acu">
+            <p class="deta-txt">Wind:  3213 m/h  </p>
+          </div>
+          <div class="humi-acu">
+            <p class="deta-txt">Humidity:  43%  </p>
+          </div>
+        </div>
+      </div>
+      <div class ="weat-rise-set">
+        <div class="sunrise-det">
+          <p class="deta-txt">Sunrise: {{ city_weather.sunrise }}</p>
+        </div>
+        <div class="sunset-det">
+          <p class="deta-txt">Sunset: {{ city_weather.sunset }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="det-right-men">
+    <div class="img-four">
+      <p>Image gallery:</p>
+      <div class="dubl-img-01">
+        <p>Spring:</p>
+        <img src="spring.jpg" class="image-con-lft">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom-content">
+  <div class="foreca-colums">
+    <p>Forecast for every 3 hours: </p>
+    <div class="foreca-colums-conten">
+      <div class="column01">
+        <div class="obj-tabl001">
+          <div class="img-tabl">
+            <img src="sun.png" height="45" width="45">
+          </div>
+          <div class="tabl-cit">
+            <h5>Paris</h5>
+          </div>
+          <div class="tabl-dat-tim">
+            <div class="tabl-time">
+              <p>Time: 14:59</p>
+            </div>
+            <div class="tabl-date">
+              <p>Date: 26.08</p>
+            </div>
+          </div>
+          <div class="tabl-degrees">
+            <span class="degre-numb">8°C</span>
+          </div>
+        </div>
+        <div class="obj-tabl002">
+          <div class="img-tabl">
+            <img src="sun.png" height="45" width="45">
+          </div>
+          <div class="tabl-cit">
+            <h5>Paris</h5>
+          </div>
+          <div class="tabl-dat-tim">
+            <div class="tabl-time">
+              <p>Time: 14:59</p>
+            </div>
+            <div class="tabl-date">
+              <p>Date: 26.08</p>
+            </div>
+          </div>
+          <div class="tabl-degrees">
+            <span class="degre-numb">8°C</span>
+          </div>
+        </div>
+        <div class="obj-tabl003">
+          <div class="img-tabl">
+            <img src="sun.png" height="45" width="45">
+          </div>
+          <div class="tabl-cit">
+            <h5>Paris</h5>
+          </div>
+          <div class="tabl-dat-tim">
+            <div class="tabl-time">
+              <p>Time: 14:59</p>
+            </div>
+            <div class="tabl-date">
+              <p>Date: 26.08</p>
+            </div>
+          </div>
+          <div class="tabl-degrees">
+            <span class="degre-numb">8°C</span>
+          </div>
+        </div>
+        <div class="obj-tabl004">
+          <div class="img-tabl">
+            <img src="sun.png" height="45" width="45">
+          </div>
+          <div class="tabl-cit">
+            <h5>Paris</h5>
+          </div>
+          <div class="tabl-dat-tim">
+            <div class="tabl-time">
+              <p>Time: 14:59</p>
+            </div>
+            <div class="tabl-date">
+              <p>Date: 26.08</p>
+            </div>
+          </div>
+          <div class="tabl-degrees">
+            <span class="degre-numb">8°C</span>
+          </div>
+        </div>
+      </div>
+      <div class="column02">
+        <div class="obj-tabl001">
+          <div class="img-tabl">
+            <img src="sun.png" height="45" width="45">
+          </div>
+          <div class="tabl-cit">
+            <h5>Paris</h5>
+          </div>
+          <div class="tabl-dat-tim">
+            <div class="tabl-time">
+              <p>Time: 14:59</p>
+            </div>
+            <div class="tabl-date">
+              <p>Date: 26.08</p>
+            </div>
+          </div>
+          <div class="tabl-degrees">
+            <span class="degre-numb">8°C</span>
+          </div>
+        </div>
+        <div class="obj-tabl002">
+          <div class="img-tabl">
+            <img src="sun.png" height="45" width="45">
+          </div>
+          <div class="tabl-cit">
+            <h5>Paris</h5>
+          </div>
+          <div class="tabl-dat-tim">
+            <div class="tabl-time">
+              <p>Time: 14:59</p>
+            </div>
+            <div class="tabl-date">
+              <p>Date: 26.08</p>
+            </div>
+          </div>
+          <div class="tabl-degrees">
+            <span class="degre-numb">8°C</span>
+          </div>
+        </div>
+        <div class="obj-tabl003">
+          <div class="img-tabl">
+            <img src="sun.png" height="45" width="45">
+          </div>
+          <div class="tabl-cit">
+            <h5>Paris</h5>
+          </div>
+          <div class="tabl-dat-tim">
+            <div class="tabl-time">
+              <p>Time: 14:59</p>
+            </div>
+            <div class="tabl-date">
+              <p>Date: 26.08</p>
+            </div>
+          </div>
+          <div class="tabl-degrees">
+            <span class="degre-numb">8°C</span>
+          </div>
+        </div>
+        <div class="obj-tabl004">
+          <div class="img-tabl">
+            <img src="sun.png" height="45" width="45">
+          </div>
+          <div class="tabl-cit">
+            <h5>Paris</h5>
+          </div>
+          <div class="tabl-dat-tim">
+            <div class="tabl-time">
+              <p>Time: 14:59</p>
+            </div>
+            <div class="tabl-date">
+              <p>Date: 26.08</p>
+            </div>
+          </div>
+          <div class="tabl-degrees">
+            <span class="degre-numb">8°C</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot-right-men">
+    <div class="menu-ver-list">
+      <div class="itm-mnu-nme-01">
+        <p>duashdas</p>
+      </div>
+      <div class="itm-mnu-nme-02">
+        <p>opdjasiod</p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

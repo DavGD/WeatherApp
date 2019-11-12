@@ -1,175 +1,293 @@
-html, body {
-  margin: 0 ;
-  height: 100%;
-}
-
-.main-site {
-  background: url('images/.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: black;
-  height: 100%;
-}
-
-.logo-name {
-  position: relative;
-  box-sizing: content-box;
-  display: block;
-}
-
-.crim-bar {
+* {
   box-sizing: border-box;
 }
 
-.navi-bar {
-  list-style-type: none;
+body {
+  font-family: arial;
+  background-color: #d9d9d9;
   margin: 0;
-  padding: 0;
-  height: 40px;
-  overflow: hidden;
+
+}
+
+.head-top {
+  height: 45px;
+  background-color: black;
+  box-shadow: 15px 0px 15px grey;
+  opacity: 0.7;
+  filter: alpha(opacity=50);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+
+}
+
+.time-top {
+  float: right;
+  font-size: 14px;
+  color: white;
+  padding: 7px;
+}
+
+.date-top {
+  float: right;
+  font-size: 14px;
+  color: white;
+  padding: 7px;
+}
+
+.logo {
+  float: left;
+}
+
+.middle-art {
+  box-shadow: 0px 4px 8px grey;
+}
+
+.form-top {
+  text-align: center;
+}
+
+#id_name {
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 4px;
   background-color: white;
+  height: 52px;
+  width: 486px;
+  margin-top: 50px;
+  margin-left: 146px;
+  padding: 20px;
+  box-shadow: 0px 2px 8px grey;
 }
 
-.item00 {
-  font-family: 'Lemonada', cursive;
+.middle-content {
   text-align: center;
-  font-size: 35px;
-  margin-top: 10px;
+  width: 100%;
+  background-image: url("images/meadow.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.left-bar {
-  float: left;
+
+.hori-elements {
+  padding: 20px;
 }
 
-.left-list {
-  list-style-type: none;
-  margin: 0;
-  margin-top: 250px;
-  padding: 0;
-  width: 330px;
-  height: 300px;
-  border-right: 3px solid white;
-  text-align: center;
-  box-sizing: content-box;
+.item001, .item002, .item003, .item004, .item005 {
+  display: inline-block;
+  padding: 10px;
+  margin-left: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 150px;
+  background: rgba(217, 217, 217, 0.5);
+  box-shadow: 0px 2px 8px grey;
 }
 
-.item1, .item2 {
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-}
 
-.right-bar {
-  float: right;
-}
-
-.right-list {
-  list-style-type: none;
-  margin: 0;
-  margin-top: 250px;
-  padding: 0;
-  width: 330px;
-  height: 300px;
-  border-left: 3px solid white;
-  text-align: center;
-  box-sizing: content-box;
-}
-
-.item3, .item4 {
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-}
-
-.list-items {
-  position: relative;
-  width: 500px;
-  height: 600px;
-  margin: 0 auto;
-  padding: 120px;
-  box-sizing: content-box;
-}
-
-.bot-sun {
-  position: absolute;
-  bottom: 250px;
-  width: 500px;
-}
-
-.left-sun {
-  float: left;
-  width: 250px;
-}
-
-.sun-txt {
-  color: white;
-  text-align: center;
-  font-size: 20px;
-}
-
-.right-sun {
-  float: right;
-  width: 250px;
-}
-
-.rise-txt {
-  color: white;
-  text-align: center;
-  font-size: 20px;
-}
-
-.city-field {
-  margin-top: 120px;
-  height: 280px;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  background: rgba(0,0,0,0.7);
-}
-
-.weat-block {
-  margin-top: 100px;
-  height: 250px;
-  position: relative;
-}
-
-.city-w {
-  font-family: 'Montserrat';
-  font-size: 28px;
-  color: white;
-  text-align: center;
-}
-
-.temp-w {
-  font-family: 'Montserrat';
+h3 {
   font-size: 23px;
-  color: white;
-  text-align: center;
 }
 
-.weat-w {
-  font-family: 'Montserrat';
-  font-size: 18px;
-  color: white;
+.betwen-content {
   text-align: center;
+  margin: 0 auto;
+  width: 1450px;
+  height: 250px;
+  background: white;
+  box-shadow: 0px 4px 8px grey;
 }
 
-.icon-w{
+.betwen-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.actual-weat-block {
   float: left;
-  position: absolute;
-  top: -90px;
-  left: 200px;
-
+  width: 73%;
+  margin: auto;
 }
 
-.botter {
-  margin: 0;
-  padding: 0;
-  height: 40px;
-  background-color: white;
-  margin-top: 56px;
+.cit-details {
+  background: #99d6ff;
+  border-radius: 20px;
+  height: 140px;
+  width: 980px;
+  margin-left: 45px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+.cit-acu-name {
+  padding-right: 40px;
+  border-right: 2px dashed grey;
+}
+
+.town-txt {
+  font-size: 27px;
+}
+
+.weat-img-deg {
+  line-height: 10px;
+  padding-right: 30px;
+  position: relative;
+  top: 20px;
+  border-right: 2px dashed grey;
+}
+
+.cit-acu-name, .weat-img-deg, .weat-det-tbl, .weat-rise-set {
+  display: inline-block;
+  height: 110px;
+}
+
+.det-img {
+  display: inline-block;
+  padding: 10px;
+}
+
+.degrees-det {
+  display: inline-block;
+  font-size: 38px;
+  position: relative;
+  bottom: 25px;
+}
+
+.desc-deg {
+  font-size: 14px;
+  position: relative;
+  bottom: 25px;
+}
+
+.weat-det-tbl {
+  border-right: 2px dashed grey;
+}
+
+.tbl-det-01{
+  padding-left: 5px;
+  line-height: 17px;
+  width: 190px;
+}
+
+.weat-rise-set {
+  padding-left: 55px;
+  line-height: 17px;
+}
+
+.sunrise-det {
+  display: inline-block;
+  padding-right: 60px;
+}
+
+.sunset-det {
+  display: inline-block;
+}
+
+.det-right-men {
+  text-align: center;
+  float: left;
+  width: 27%;
+  border-left: 2px solid black;
+  height: 250px;
+}
+
+.image-con-lft {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+}
+
+.bottom-content {
+  text-align: center;
+  margin: 0 auto;
+  width: 1450px;
+  background: white;
+  box-shadow: 0px 4px 8px grey;
+}
+
+.foreca-colums {
+  float: left;
+  width: 73%;
+}
+
+.foreca-colums-conten {
+  width: 980px;
+  height: 350px;
+  margin-left: 45px;
+}
+
+.column01 {
+  float: left;
+}
+
+.column02 {
+  float: left;
+}
+
+.bot-right-men {
+  float: left;
+  width: 27%;
+  border-left: 2px solid black;
+}
+
+.bottom-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.obj-tabl001, .obj-tabl002, .obj-tabl003, .obj-tabl004 {
+  border: 2px solid black;
+  border-radius: 7px;
+  width: 460px;
+  height: 60px;
+  margin: 15px;
+}
+
+
+.img-tabl {
+  float: left;
+  position: relative;
+  bottom: 23px;
+  right: 10px;
+}
+
+.tabl-cit {
+  position: relative;
+  bottom: 30px;
+  right: 10px;
+  float: left;
+  height: 10%;
+}
+
+h5 {
+  font-size: 25px;
+}
+
+.tabl-dat-tim {
+  position: relative;
+  font-size: 19px;
+  bottom: 15px;
+  right: 50px;
+}
+
+.tabl-time, .tabl-date {
+  height: 10%;
+}
+
+.tabl-degrees {
+  font-size: 25px;
+  position: relative;
+  bottom: 25px;
+  left: 10px;
+}
+
+.tabl-degrees, .tabl-dat-tim, .tabl-cit {
+  display: inline-block;
 }
