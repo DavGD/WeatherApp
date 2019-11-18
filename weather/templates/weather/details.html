@@ -8,7 +8,8 @@
 {% block content %}
 <div class="middle-content">
   <div class="form-top">
-    <form action="" method="POST">
+    <form action="{% url 'city_site' %}" method="POST" class="city-form">
+      {% csrf_token %}
       <label for="id_name"></label>
       <input type="text" name="city" maxlength="25" required="" placeholder="Search location..." id="id_name">
     </form>
@@ -74,16 +75,16 @@
 <div class="betwen-content">
   <div class="actual-weat-block">
     <div class="head-desctr-acc">
-      <h4>Today Weather:</h4>
+      <h4>{{ city_weather.city }}</h4>
+      <p>{{ city_weather.country }}</p>
     </div>
     <div class="cit-details">
       <div class="cit-acu-name">
-        <div class="town-txt"
+        <div class="town-txt">
           <p>{{ city_weather.city }}</p>
         </div>
-        <div class="tim-dat-twn">
-          <p> 14:11 </p>
-          <p> 27.06.2019 </p>
+        <div class="country-txt">
+          <p>{{ city_weather.country }}</p>
         </div>
       </div>
       <div class="weat-img-deg">
@@ -91,7 +92,7 @@
           <img src="http://openweathermap.org/img/wn/{{ city_weather.icon }}@2x.png" height="80" width="80">
         </div>
         <div class="degrees-det">
-          <span class="deg-det">{{ city_weather.temperature }}</span>
+          <span class="deg-det">{{ city_weather.temperature }}°C</span>
         </div>
         <div class="desc-deg">
           <p> {{ city_weather.weather }} </p>
@@ -100,22 +101,26 @@
       <div class="weat-det-tbl">
         <div class="tbl-det-01">
           <div class="plea-acu">
-            <p class="deta-txt">Pleasure:  123214  </p>
+            <p class="deta-txt">Pressure: {{city_weather.pressure }} hPa</p>
           </div>
           <div class="wind-acu">
-            <p class="deta-txt">Wind:  3213 m/h  </p>
+            <p class="deta-txt">Wind: {{ city_weather.wind }} m/s </p>
           </div>
           <div class="humi-acu">
-            <p class="deta-txt">Humidity:  43%  </p>
+            <p class="deta-txt">Humidity: {{ city_weather.humidity }} % </p>
           </div>
         </div>
       </div>
       <div class ="weat-rise-set">
         <div class="sunrise-det">
           <p class="deta-txt">Sunrise: {{ city_weather.sunrise }}</p>
+          <span class="icon-up-open"></span>
+          <span class="icon-sunrise"></span>
         </div>
         <div class="sunset-det">
           <p class="deta-txt">Sunset: {{ city_weather.sunset }} </p>
+          <span class="icon-down-open"></span>
+          <span class="icon-sunrise"></span>
         </div>
       </div>
     </div>
@@ -137,156 +142,124 @@
       <div class="column01">
         <div class="obj-tabl001">
           <div class="img-tabl">
-            <img src="sun.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.0 }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
-            <h5>Paris</h5>
+            <p>{{ city_weather.for_time_date.0.0 }}</p>
+            <p>{{ city_weather.for_time_date.0.1 }}</p>
           </div>
-          <div class="tabl-dat-tim">
-            <div class="tabl-time">
-              <p>Time: 14:59</p>
-            </div>
-            <div class="tabl-date">
-              <p>Date: 26.08</p>
-            </div>
+          <div class="tabl-desc">
+            <p>{{ city_weather.for_description.0 }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">8°C</span>
+            <span class="degre-numb">{{ city_weather.for_temp.0 }}°C</span>
           </div>
         </div>
         <div class="obj-tabl002">
           <div class="img-tabl">
-            <img src="sun.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.1 }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
-            <h5>Paris</h5>
+            <p>{{ city_weather.for_time_date.1.0 }}</p>
+            <p>{{ city_weather.for_time_date.1.1 }}</p>
           </div>
-          <div class="tabl-dat-tim">
-            <div class="tabl-time">
-              <p>Time: 14:59</p>
-            </div>
-            <div class="tabl-date">
-              <p>Date: 26.08</p>
-            </div>
+          <div class="tabl-desc">
+            <p>{{ city_weather.for_description.1 }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">8°C</span>
+            <span class="degre-numb">{{ city_weather.for_temp.1 }}°C</span>
           </div>
         </div>
         <div class="obj-tabl003">
           <div class="img-tabl">
-            <img src="sun.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.2 }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
-            <h5>Paris</h5>
+            <p>{{ city_weather.for_time_date.2.0 }}</p>
+            <p>{{ city_weather.for_time_date.2.1 }}</p>
           </div>
-          <div class="tabl-dat-tim">
-            <div class="tabl-time">
-              <p>Time: 14:59</p>
-            </div>
-            <div class="tabl-date">
-              <p>Date: 26.08</p>
-            </div>
+          <div class="tabl-desc">
+            <p>{{ city_weather.for_description.2 }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">8°C</span>
+            <span class="degre-numb">{{ city_weather.for_temp.2 }}°C</span>
           </div>
         </div>
         <div class="obj-tabl004">
           <div class="img-tabl">
-            <img src="sun.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.3 }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
-            <h5>Paris</h5>
+            <p>{{ city_weather.for_time_date.3.0 }}</p>
+            <p>{{ city_weather.for_time_date.3.1 }}</p>
           </div>
-          <div class="tabl-dat-tim">
-            <div class="tabl-time">
-              <p>Time: 14:59</p>
-            </div>
-            <div class="tabl-date">
-              <p>Date: 26.08</p>
-            </div>
+          <div class="tabl-desc">
+            <p>{{ city_weather.for_description.3 }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">8°C</span>
+            <span class="degre-numb">{{ city_weather.for_temp.3 }}°C</span>
           </div>
         </div>
       </div>
       <div class="column02">
         <div class="obj-tabl001">
           <div class="img-tabl">
-            <img src="sun.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.4 }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
-            <h5>Paris</h5>
+            <p>{{ city_weather.for_time_date.4.0 }}</p>
+            <p>{{ city_weather.for_time_date.4.1 }}</p>
           </div>
-          <div class="tabl-dat-tim">
-            <div class="tabl-time">
-              <p>Time: 14:59</p>
-            </div>
-            <div class="tabl-date">
-              <p>Date: 26.08</p>
-            </div>
+          <div class="tabl-desc">
+            <p>{{ city_weather.for_description.4 }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">8°C</span>
+            <span class="degre-numb">{{ city_weather.for_temp.4 }}°C</span>
           </div>
         </div>
         <div class="obj-tabl002">
           <div class="img-tabl">
-            <img src="sun.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.5 }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
-            <h5>Paris</h5>
+            <p>{{ city_weather.for_time_date.5.0 }}</p>
+            <p>{{ city_weather.for_time_date.5.1 }}</p>
           </div>
-          <div class="tabl-dat-tim">
-            <div class="tabl-time">
-              <p>Time: 14:59</p>
-            </div>
-            <div class="tabl-date">
-              <p>Date: 26.08</p>
-            </div>
+          <div class="tabl-desc">
+            <p>{{ city_weather.for_description.5 }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">8°C</span>
+            <span class="degre-numb">{{ city_weather.for_temp.5 }}°C</span>
           </div>
         </div>
         <div class="obj-tabl003">
           <div class="img-tabl">
-            <img src="sun.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.6 }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
-            <h5>Paris</h5>
+            <p>{{ city_weather.for_time_date.6.0 }}</p>
+            <p>{{ city_weather.for_time_date.6.1 }}</p>
           </div>
-          <div class="tabl-dat-tim">
-            <div class="tabl-time">
-              <p>Time: 14:59</p>
-            </div>
-            <div class="tabl-date">
-              <p>Date: 26.08</p>
-            </div>
+          <div class="tabl-desc">
+            <p>{{ city_weather.for_description.6 }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">8°C</span>
+            <span class="degre-numb">{{ city_weather.for_temp.6 }}°C</span>
           </div>
         </div>
         <div class="obj-tabl004">
           <div class="img-tabl">
-            <img src="sun.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.7 }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
-            <h5>Paris</h5>
+            <p>{{ city_weather.for_time_date.7.0 }}</p>
+            <p>{{ city_weather.for_time_date.7.1 }}</p>
           </div>
-          <div class="tabl-dat-tim">
-            <div class="tabl-time">
-              <p>Time: 14:59</p>
-            </div>
-            <div class="tabl-date">
-              <p>Date: 26.08</p>
-            </div>
+          <div class="tabl-desc">
+            <p>{{ city_weather.for_description.7 }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">8°C</span>
+            <span class="degre-numb">{{ city_weather.for_temp.7 }}°C</span>
           </div>
         </div>
       </div>

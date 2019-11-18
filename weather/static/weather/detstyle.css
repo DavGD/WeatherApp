@@ -1,3 +1,4 @@
+@import "fontello.css";
 * {
   box-sizing: border-box;
 }
@@ -116,8 +117,8 @@ h3 {
   background: #99d6ff;
   border-radius: 20px;
   height: 140px;
-  width: 980px;
-  margin-left: 45px;
+  width: 1020px;
+  margin-left: 20px;
 }
 
 h4 {
@@ -128,22 +129,25 @@ h4 {
   padding-right: 40px;
   border-right: 2px dashed grey;
 }
-
 .town-txt {
-  font-size: 27px;
+  font-size: 27px
+}
+
+.country-txt {
+  font-size: 15px;
 }
 
 .weat-img-deg {
   line-height: 10px;
   padding-right: 30px;
-  position: relative;
-  top: 20px;
   border-right: 2px dashed grey;
 }
 
 .cit-acu-name, .weat-img-deg, .weat-det-tbl, .weat-rise-set {
   display: inline-block;
   height: 110px;
+  margin-top: 15px;
+  overflow: hidden;
 }
 
 .det-img {
@@ -175,13 +179,13 @@ h4 {
 }
 
 .weat-rise-set {
-  padding-left: 55px;
+  padding-left: 25px;
   line-height: 17px;
 }
 
 .sunrise-det {
   display: inline-block;
-  padding-right: 60px;
+  padding-right: 35px;
 }
 
 .sunset-det {
@@ -223,10 +227,14 @@ h4 {
 
 .column01 {
   float: left;
+  background: #99d6ff;
+  border-radius: 20px;
 }
 
 .column02 {
   float: left;
+  background: #99d6ff;
+  border-radius: 20px;
 }
 
 .bot-right-men {
@@ -245,47 +253,40 @@ h4 {
 .obj-tabl001, .obj-tabl002, .obj-tabl003, .obj-tabl004 {
   border: 2px solid black;
   border-radius: 7px;
-  width: 460px;
+  width: 450px;
   height: 60px;
-  margin: 15px;
+  margin: 12px;
 }
 
 
 .img-tabl {
   float: left;
   position: relative;
-  bottom: 23px;
-  right: 10px;
+  bottom: 21px;
+  right: 20px;
 }
 
 .tabl-cit {
-  position: relative;
-  bottom: 30px;
-  right: 10px;
   float: left;
   height: 10%;
+  line-height: 5px;
 }
 
 h5 {
   font-size: 25px;
 }
 
-.tabl-dat-tim {
-  position: relative;
-  font-size: 19px;
-  bottom: 15px;
-  right: 50px;
-}
-
-.tabl-time, .tabl-date {
+.tabl-desc {
   height: 10%;
+  font-size: 19px;
+  float: left;
+  padding-left: 35px;
 }
 
 .tabl-degrees {
   font-size: 25px;
-  position: relative;
-  bottom: 25px;
-  left: 10px;
+  overflow: hidden;
+  padding-top: 14px;
 }
 
 .tabl-degrees, .tabl-dat-tim, .tabl-cit {
