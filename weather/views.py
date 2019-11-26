@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
+from django.contrib.staticfiles.storage import staticfiles_storage
 import requests
 from .forms import CityForm
 from .models import CityField
 from datetime import datetime
 import json, random
-
 
 def main_site(request):
     if request.method == 'POST':
@@ -29,6 +29,7 @@ def main_site(request):
 def city_site(request):
     url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=8cc2f0a4630ad36fc89c8ab644ef1e28'
     url2 = 'http://api.openweathermap.org/data/2.5/forecast?id={}&units=metric&appid=8cc2f0a4630ad36fc89c8ab644ef1e28'
+    url3 = 'https://api.openweathermap.org/data/2.5//group?id={}&units=metric&appid=8cc2f0a4630ad36fc89c8ab644ef1e28'
 
     if request.method == 'POST':
         form = CityForm(request.POST)
@@ -50,17 +51,13 @@ def city_site(request):
             for x in time_date_forecast:
                 time_date_forecast_done.append(x.split(' '))
 
-            temp_forecast = []
-            for i in range(8):
-                temp_forecast.append(int(r2['list'][i]['main']['temp']))
-
-            icon_forecast = []
-            for i in range(8):
-                icon_forecast.append(str(r2['list'][i]['weather'][0]['icon']))
-
-            description_forecast = []
-            for i in range(8):
-                description_forecast.append(str(r2['list'][i]['weather'][0]['description']))
+            list_of_cities = []
+            with open(staticfiles_storage.path('city.list.json')) as f:
+                data = json.load(f)
+                for cit_l in range(len(data)):
+                    list_of_cities.append(data[cit_l]['id'])
+            r_li = random.sample(list_of_cities, k=5)
+            r3 = requests.get(url3.format(r_li).replace(' ', '').replace('[', '').replace(']', '')).json()
 
             city_weather = {
                 'country' : r['sys']['country'],
@@ -73,10 +70,9 @@ def city_site(request):
                 'pressure' : int(r['main']['pressure']),
                 'humidity' : int(r['main']['humidity']),
                 'wind' : round(float(r['wind']['speed']),1),
-                'for_temp' : temp_forecast,
                 'for_time_date' : time_date_forecast_done,
-                'for_icon' : icon_forecast,
-                'for_description' : description_forecast,
+                'for_list' : r2['list'],
+                'r_city' : r3['list'],
             }
 
             context = {'city_weather' : city_weather}

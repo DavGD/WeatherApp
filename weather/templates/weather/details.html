@@ -15,59 +15,64 @@
     </form>
   </div>
   <div class="hori-elements">
-    <div class="item001">
-      <div class="place-n">
-        <h3>Poznań</h3>
+    <div class="hori-el-01">
+      <div class="item001">
+        <div class="place-n">
+          <h3>{{ city_weather.r_city.0.name }}</h3>
+          < a href="/"
+        </div>
+        <div class="img-weat">
+          <img src="http://openweathermap.org/img/wn/{{ city_weather.r_city.0.weather.0.icon }}@2x.png" height="20" width="20">
+        </div>
+        <div class="degrees">
+          <span class="dg-st">{{ city_weather.r_city.0.main.temp|floatformat:"0" }}°C</span>
+        </div>
       </div>
-      <div class="img-weat">
-        <img src="sun.png" height="45" width="45">
+      <div class="item002">
+        <div class="place-n">
+          <h3>{{ city_weather.r_city.1.name }}</h3>
+        </div>
+        <div class="img-weat">
+          <img src="http://openweathermap.org/img/wn/{{ city_weather.r_city.1.weather.0.icon }}@2x.png" height="20" width="20">
+        </div>
+        <div class="degrees">
+          <span class="dg-st">{{ city_weather.r_city.1.main.temp|floatformat:"0" }}°C</span>
+        </div>
       </div>
-      <div class="degrees">
-        <span class="dg-st">15°C</span>
-      </div>
-    </div>
-    <div class="item002">
-      <div class="place-n">
-        <h3>Gniezno</h3>
-      </div>
-      <div class="img-weat">
-        <img src="sun.png" height="45" width="45">
-      </div>
-      <div class="degrees">
-        <span class="dg-st">22°C</span>
-      </div>
-    </div>
-    <div class="item003">
-      <div class="place-n">
-        <h3>Warszawa</h3>
-      </div>
-      <div class="img-weat">
-        <img src="sun.png" height="45" width="45">
-      </div>
-      <div class="degrees">
-        <span class="dg-st">28°C</span>
-      </div>
-    </div>
-    <div class="item004">
-      <div class="place-n">
-        <h3>Amsterdam</h3>
-      </div>
-      <div class="img-weat">
-        <img src="sun.png" height="45" width="45">
-      </div>
-      <div class="degrees">
-        <span class="dg-st">5°C</span>
+      <div class="item003">
+        <div class="place-n">
+          <h3>{{ city_weather.r_city.2.name }}</h3>
+        </div>
+        <div class="img-weat">
+          <img src="http://openweathermap.org/img/wn/{{ city_weather.r_city.2.weather.0.icon }}@2x.png" height="20" width="20">
+        </div>
+        <div class="degrees">
+          <span class="dg-st">{{ city_weather.r_city.2.main.temp|floatformat:"0" }}°C</span>
+        </div>
       </div>
     </div>
-    <div class="item005">
-      <div class="place-n">
-        <h3>Paryż</h3>
+    <div class="hori-el-02">
+      <div class="item004">
+        <div class="place-n">
+          <h3>{{ city_weather.r_city.3.name }}</h3>
+        </div>
+        <div class="img-weat">
+          <img src="http://openweathermap.org/img/wn/{{ city_weather.r_city.3.weather.0.icon }}@2x.png" height="20" width="20">
+        </div>
+        <div class="degrees">
+          <span class="dg-st">{{ city_weather.r_city.3.main.temp|floatformat:"0" }}°C</span>
+        </div>
       </div>
-      <div class="img-weat">
-        <img src="sun.png" height="45" width="45">
-      </div>
-      <div class="degrees">
-        <span class="dg-st">8°C</span>
+      <div class="item005">
+        <div class="place-n">
+          <h3>{{ city_weather.r_city.4.name }}</h3>
+        </div>
+        <div class="img-weat">
+          <img src="http://openweathermap.org/img/wn/{{ city_weather.r_city.4.weather.0.icon }}@2x.png" height="20" width="20">
+        </div>
+        <div class="degrees">
+          <span class="dg-st">{{ city_weather.r_city.4.main.temp|floatformat:"0" }}°C</span>
+        </div>
       </div>
     </div>
   </div>
@@ -142,124 +147,124 @@
       <div class="column01">
         <div class="obj-tabl001">
           <div class="img-tabl">
-            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.0 }}@2x.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_list.0.weather.0.icon }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
             <p>{{ city_weather.for_time_date.0.0 }}</p>
             <p>{{ city_weather.for_time_date.0.1 }}</p>
           </div>
           <div class="tabl-desc">
-            <p>{{ city_weather.for_description.0 }}</p>
+            <p>{{ city_weather.for_list.0.weather.0.description }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">{{ city_weather.for_temp.0 }}°C</span>
+            <span class="degre-numb">{{ city_weather.for_list.0.main.temp|floatformat:"0" }}°C</span>
           </div>
         </div>
         <div class="obj-tabl002">
           <div class="img-tabl">
-            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.1 }}@2x.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_list.1.weather.0.icon }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
             <p>{{ city_weather.for_time_date.1.0 }}</p>
             <p>{{ city_weather.for_time_date.1.1 }}</p>
           </div>
           <div class="tabl-desc">
-            <p>{{ city_weather.for_description.1 }}</p>
+            <p>{{ city_weather.for_list.1.weather.0.description }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">{{ city_weather.for_temp.1 }}°C</span>
+            <span class="degre-numb">{{ city_weather.for_list.1.main.temp|floatformat:"0" }}°C</span>
           </div>
         </div>
         <div class="obj-tabl003">
           <div class="img-tabl">
-            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.2 }}@2x.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_list.2.weather.0.icon }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
             <p>{{ city_weather.for_time_date.2.0 }}</p>
             <p>{{ city_weather.for_time_date.2.1 }}</p>
           </div>
           <div class="tabl-desc">
-            <p>{{ city_weather.for_description.2 }}</p>
+            <p>{{ city_weather.for_list.2.weather.0.description }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">{{ city_weather.for_temp.2 }}°C</span>
+            <span class="degre-numb">{{ city_weather.for_list.2.main.temp|floatformat:"0" }}°C</span>
           </div>
         </div>
         <div class="obj-tabl004">
           <div class="img-tabl">
-            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.3 }}@2x.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_list.3.weather.0.icon }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
             <p>{{ city_weather.for_time_date.3.0 }}</p>
             <p>{{ city_weather.for_time_date.3.1 }}</p>
           </div>
           <div class="tabl-desc">
-            <p>{{ city_weather.for_description.3 }}</p>
+            <p>{{ city_weather.for_list.3.weather.0.description }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">{{ city_weather.for_temp.3 }}°C</span>
+            <span class="degre-numb">{{ city_weather.for_list.3.main.temp|floatformat:"0" }}°C</span>
           </div>
         </div>
       </div>
       <div class="column02">
         <div class="obj-tabl001">
           <div class="img-tabl">
-            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.4 }}@2x.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_list.4.weather.0.icon }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
             <p>{{ city_weather.for_time_date.4.0 }}</p>
             <p>{{ city_weather.for_time_date.4.1 }}</p>
           </div>
           <div class="tabl-desc">
-            <p>{{ city_weather.for_description.4 }}</p>
+            <p>{{ city_weather.for_list.4.weather.0.description }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">{{ city_weather.for_temp.4 }}°C</span>
+            <span class="degre-numb">{{ city_weather.for_list.4.main.temp|floatformat:"0" }}°C</span>
           </div>
         </div>
         <div class="obj-tabl002">
           <div class="img-tabl">
-            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.5 }}@2x.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_list.5.weather.0.icon }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
             <p>{{ city_weather.for_time_date.5.0 }}</p>
             <p>{{ city_weather.for_time_date.5.1 }}</p>
           </div>
           <div class="tabl-desc">
-            <p>{{ city_weather.for_description.5 }}</p>
+            <p>{{ city_weather.for_list.5.weather.0.description }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">{{ city_weather.for_temp.5 }}°C</span>
+            <span class="degre-numb">{{ city_weather.for_list.5.main.temp|floatformat:"0" }}°C</span>
           </div>
         </div>
         <div class="obj-tabl003">
           <div class="img-tabl">
-            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.6 }}@2x.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_list.6.weather.0.icon }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
             <p>{{ city_weather.for_time_date.6.0 }}</p>
             <p>{{ city_weather.for_time_date.6.1 }}</p>
           </div>
           <div class="tabl-desc">
-            <p>{{ city_weather.for_description.6 }}</p>
+            <p>{{ city_weather.for_list.6.weather.0.description }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">{{ city_weather.for_temp.6 }}°C</span>
+            <span class="degre-numb">{{ city_weather.for_list.6.main.temp|floatformat:"0" }}°C</span>
           </div>
         </div>
         <div class="obj-tabl004">
           <div class="img-tabl">
-            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_icon.7 }}@2x.png" height="45" width="45">
+            <img src="http://openweathermap.org/img/wn/{{ city_weather.for_list.7.weather.0.icon }}@2x.png" height="45" width="45">
           </div>
           <div class="tabl-cit">
             <p>{{ city_weather.for_time_date.7.0 }}</p>
             <p>{{ city_weather.for_time_date.7.1 }}</p>
           </div>
           <div class="tabl-desc">
-            <p>{{ city_weather.for_description.7 }}</p>
+            <p>{{ city_weather.for_list.7.weather.0.description }}</p>
           </div>
           <div class="tabl-degrees">
-            <span class="degre-numb">{{ city_weather.for_temp.7 }}°C</span>
+            <span class="degre-numb">{{ city_weather.for_list.7.main.temp|floatformat:"0" }}°C</span>
           </div>
         </div>
       </div>
